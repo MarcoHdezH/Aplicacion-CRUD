@@ -108,5 +108,22 @@
             <p>Desarrollado por Marco Antonio Hernandez Hernandez</p>
         </section>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+    <script src="./js/all_data.js"></script>
+    <script src="./js/save.js"></script>
+    <script src="./js/find.js"></script>
+    <script src="./js/remove.js"></script>
+    <script>
+        allData()
+    </script>
+    <script>
+        function clearData() {
+            document.getElementById('form').reset()
+            document.getElementById('id').value = ""
+        }
+    </script>
+    
 </body>
 </html>
