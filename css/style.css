@@ -121,6 +121,19 @@ img{
     text-align: center;
 }
 
+.texto p{
+    padding: 2rem;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+
+.texto li{
+    font-size: 1.6rem;
+    text-align: center;
+
+}
+
 @media (min-width: 768px) {
     .texto h1{
         font-size: 4.5rem;
