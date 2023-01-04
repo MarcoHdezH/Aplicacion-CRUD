@@ -11,17 +11,20 @@ function guardar() {
 
 			if (document.getElementById("id").value == value.id) {
 				(value.name = document.getElementById("name").value),
-					(value.age = document.getElementById("age").value),
-					(value.address = document.getElementById("address").value),
-					(value.phone = document.getElementById("phone").value);
+				(value.age = document.getElementById("age").value),
+				(value.address = document.getElementById("address").value),
+				(value.phone = document.getElementById("phone").value);
 			}
 		});
 
 		document.getElementById("id").value = "";
 	} else {
-		let aux = ("" == document.getElementById("name").value)
-		if (aux == true) {
-			console.log("Hola")
+		let name = ("" == document.getElementById("name").value)
+		let age = ("" == document.getElementById("age").value)
+		let address = ("" == document.getElementById("address").value)
+		let phone = ("" == document.getElementById("phone").value)
+		if (name == true || age ==true || address == true || phone == true  ) {
+			confirm("Debes llenar todos los espacios")
 		} else {
 			let item = {
 				id: id + 1,
@@ -57,16 +60,15 @@ function mostrar() {
                 <td>${value.address}</td>
                 <td>${value.phone}</td>
                 <td>
-                    <button class="btn btn-sm btn-success" onclick="buscar(${value.id
-			})"> <i class="fa fa-edit"></i> </button>
+                    <button class="btn btn-sm btn-success" onclick="buscar(${value.id})"> <i class="fa fa-edit"></i> </button>
                 </td>
                 <td>
-                    <button class="btn btn-sm btn-danger" onclick="eliminar(${value.id
-			})"> <i class="fa fa-trash"> </i> </button>
+                    <button class="btn btn-sm btn-danger" onclick="eliminar(${value.id})"> <i class="fa fa-trash"> </i> </button>
                 </td>
             </tr>`;
 	});
 }
+
 
 function limpiar() {
 	document.getElementById("form").reset();
