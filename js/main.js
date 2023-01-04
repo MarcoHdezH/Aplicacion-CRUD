@@ -1,11 +1,11 @@
 //Metodo que permite guarda informacion en el localStorage
-
 function guardar() {
 	contacto = JSON.parse(localStorage.getItem("listItem")) ?? [];
 
 	let id;
 	contacto.length != 0 ? contacto.findLast((item) => (id = item.id)) : (id = 0);
 
+//En caso de que el id ya exista significa que se esta editando un contacto
 	if (document.getElementById("id").value) {
 		contacto.forEach((value) => {
 
@@ -18,7 +18,10 @@ function guardar() {
 		});
 
 		document.getElementById("id").value = "";
-	} else {
+	} 
+//Caso Contrario Verifica que todos los espacios esten llenados
+
+	else{
 		let name = ("" == document.getElementById("name").value)
 		let age = ("" == document.getElementById("age").value)
 		let address = ("" == document.getElementById("address").value)
@@ -26,6 +29,7 @@ function guardar() {
 		if (name == true || age ==true || address == true || phone == true  ) {
 			confirm("Debes llenar todos los espacios")
 		} else {
+			//Si todo esta en orden procede a hacer un nuevo registro
 			let item = {
 				id: id + 1,
 				name: document.getElementById("name").value,
@@ -69,12 +73,13 @@ function mostrar() {
 	});
 }
 
-
+// Deja en blanco los Inputs del formulario
 function limpiar() {
 	document.getElementById("form").reset();
 	document.getElementById("id").value = "";
 }
 
+// Elimina un contacto
 function eliminar(id) {
 	contacto = JSON.parse(localStorage.getItem("listItem")) ?? [];
 
@@ -87,6 +92,7 @@ function eliminar(id) {
 	mostrar();
 }
 
+// Encuentra y Carga en los inputs la informacion del Contacto
 function buscar(id) {
 	contacto = JSON.parse(localStorage.getItem('listItem')) ?? []
 
