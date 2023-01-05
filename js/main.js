@@ -10,10 +10,10 @@ function guardar() {
 		contacto.forEach((value) => {
 
 			if (document.getElementById("id").value == value.id) {
-				(value.name = document.getElementById("name").value),
-				(value.age = document.getElementById("age").value),
-				(value.address = document.getElementById("address").value),
-				(value.phone = document.getElementById("phone").value);
+				(value.name = document.getElementById("nombre").value),
+				(value.age = document.getElementById("edad").value),
+				(value.address = document.getElementById("correo").value),
+				(value.phone = document.getElementById("telefono").value);
 			}
 		});
 
@@ -22,20 +22,20 @@ function guardar() {
 //Caso Contrario Verifica que todos los espacios esten llenados
 
 	else{
-		let name = ("" == document.getElementById("name").value)
-		let age = ("" == document.getElementById("age").value)
-		let address = ("" == document.getElementById("address").value)
-		let phone = ("" == document.getElementById("phone").value)
+		let name = ("" == document.getElementById("nombre").value)
+		let age = ("" == document.getElementById("edad").value)
+		let address = ("" == document.getElementById("correo").value)
+		let phone = ("" == document.getElementById("telefono").value)
 		if (name == true || age ==true || address == true || phone == true  ) {
 			confirm("Debes llenar todos los espacios")
 		} else {
 			//Si todo esta en orden procede a hacer un nuevo registro
 			let item = {
 				id: id + 1,
-				name: document.getElementById("name").value,
-				age: document.getElementById("age").value,
-				address: document.getElementById("address").value,
-				phone: document.getElementById("phone").value,
+				name: document.getElementById("nombre").value,
+				age: document.getElementById("edad").value,
+				address: document.getElementById("correo").value,
+				phone: document.getElementById("telefono").value,
 			};
 			contacto.push(item);
 		}
@@ -99,10 +99,10 @@ function buscar(id) {
 	contacto.forEach(function (value) {
 		if (value.id == id) {
 			document.getElementById('id').value = value.id
-			document.getElementById('name').value = value.name
-			document.getElementById('age').value = value.age
-			document.getElementById('address').value = value.address
-			document.getElementById('phone').value = value.phone
+			document.getElementById('nombre').value = value.name
+			document.getElementById('edad').value = value.age
+			document.getElementById('correo').value = value.address
+			document.getElementById('telefono').value = value.phone
 		}
 	})
 }
